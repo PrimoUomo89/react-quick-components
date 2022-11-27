@@ -1,0 +1,66 @@
+
+<!---
+CFFunction: Initialize X-CD Components
+arguments:
+    componentList:"#componentClassName#, #componentClassName#"
+
+body:   Imports all of the required js files (components and core)
+        Initializes an object: window.xCD_C = new XCDComponents()
+--->
+
+
+
+<div class="#componentClassName#" data-inputName="#FormScopeVarName#"></div>
+
+
+
+<script>
+
+    xCD_C.init("#element selector#", {
+        #properties#
+    }, "#componentClassName if different from selector#")
+    
+    // OR
+    
+    xCD_C.initAll([
+        {
+            selector: "selector",
+            properties: {},
+            componentClassName: "componentClassName"
+        }
+    ], {})
+
+
+    // AND, if needed:
+
+    xCD_C.update("#inputName#", {
+        // properties to update
+    })
+</script>
+
+
+
+<script>
+
+        const init = (selector, properties, componentClass) {
+            // Check if selector exists in component Registry, if not, componentClass must be.
+
+            // Get each div and for each:
+            for (const div in selectedDivs) {
+                /* 
+                    create Root,
+                    add component to store with props,
+                    render component (with store provider),
+
+                    store everything in renderedNodes
+                */
+            }
+        }
+
+        const update(inputName, updatedProps) {
+            mobXStore.update(inputName, updatedProps)
+        }
+
+
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div 
+      class="react-component"
+      data-component-type="antd-TreeSelect"
+      data-input-name="targetedGroups" 
+      data-props='{ "apple":55, "value":"Corey A" }'
+      data-track-var="value"
+    ></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      var timer = 1
+      window.onload = () => {
+        window.setInterval(() => {
+          console.log("Incrementing Timer")
+          timer ++
+          XCD_C.update("targetedGroups", {value: `Corey A: ${timer}`})
+        }, 1000)
+      }
+    </script>
+
+  </body>
+</html>
